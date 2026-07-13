@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     //投稿一覧ページ表示
     public function index(){
-        $posts = Post::all();
+        $posts = Post::latest('id')->get();
         return view('posts.index',compact('posts'));
     }
 
